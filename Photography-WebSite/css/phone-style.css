@@ -1,0 +1,528 @@
+body, html{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+@font-face{
+	font-family: mainFont;
+	src: url("fonts/ConcertOne-Regular.ttf");
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .main-container{
+		overflow: hidden;
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transition: 2s;
+		-webkit-transition: 2s;
+    }
+    .navbar-container{
+		display: none;
+    }
+    .background-name-container1, .background-name-container2{
+		position: absolute;
+		width: 90%;
+		height: 300px;
+		right: 5%;
+        top: 20%;
+        font-family: mainFont;
+		text-align: center;
+		display: none;
+		transition: 2s;
+		animation: open 5s infinite;
+		-webkit-animation: open 5s infinite;
+	}
+	@keyframes open {
+		from{opacity: 0;}
+		to{opacity: 1;}
+	}
+	.background-name{
+		color: white;
+		margin: 0;
+		font-size: 60px;
+		text-align: center;
+	}
+	.background-description{
+		float: right;
+		color: white;
+		font-size: 20px;
+	}
+	.more{
+		width: 130px;
+		height: 40px;
+		outline: none;
+		border: none;
+		background: white;
+		color: #6200ee;
+        cursor: pointer;
+        margin: auto;
+		transition: 0.6s;
+	}
+	.more:hover{
+		background-color: #6200ee;
+		color: white;
+    }
+    .changer-container{ 
+		width: 80%;
+		display: flex;
+		position: absolute;
+		left: 50%;
+		bottom: 20px;
+		transform: translateX(-50%);
+    }
+    .btn{
+		width: 80px;
+		height: 10px;
+		border-radius: 20px;
+		background-color: transparent;
+		border: 3px solid white;
+		margin: 10px;
+		cursor: pointer;
+		outline: none;
+		transition: 0.5s;
+		animation: slide 20s infinite;
+	}
+	.btn:focus{
+		background-color: white;
+		border: none;
+    }
+    .featured-container{
+		width: 100%;
+		height: 1000px;
+		margin-top: 100px;
+		font-family: mainFont;
+    }
+    .text-container{
+		width: 90%;
+		height: 200px;
+		margin: auto;
+	}
+	.text-container h1{
+		font-family: mainFont;
+		margin-left: 0;
+		font-size: 40px;
+		margin-bottom: 0;
+		padding: 0;
+	}
+	.text-container h2{
+		font-family: mainFont;
+		margin-left: 0;
+		font-size: 40px;
+		color: #6200ee;
+		margin-top: 0;
+        padding: 0;
+        margin-bottom: 0;
+	}
+	.header{
+        display: block;
+        margin: 0;
+    }
+    .photo-scroll-container{
+		width: 100%;
+		height: 400px;
+	}
+	.one:hover, .two:hover, .tree:hover{
+		box-sizing: border-box;
+	}
+	.image{
+		width: 90%;
+		max-height: 600px;
+		display: block;
+		margin: auto;
+		animation-name: zoom;
+		animation-duration: 0.6s;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-bottom: 0;
+	}
+	.arrows1{
+		width: 40px;
+		height: 40px;
+		float: right;
+		margin: 0;
+	}
+	.dugme1{
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		border: none;
+		background-image: url("images/desno.png");
+		background-size: 25px;
+		background-repeat: no-repeat;
+		background-position-x: center;
+		background-position-y: center;
+		outline: none;
+		transition: 1s;
+	}
+	.dugme1:hover{
+		background: #6200ee;
+		background-image: url("images/desno.png");
+		background-size: 25px;
+		background-repeat: no-repeat;
+		background-position-x: center;
+		background-position-y: center;
+		outline: none;
+	}
+	.arrows2{
+		width: 40px;
+		height: 40px;
+		position: relative;
+		left: 2%;
+		top: 0;
+		margin: 0;
+	}
+	.dugme2{
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		margin-left: -10px;
+		border: none;
+		background-image: url("images/levo.png");
+		background-size: 25px;
+		background-repeat: no-repeat;
+		background-position-x: center;
+		background-position-y: center;
+		outline: none;
+		transition: 1s;
+	}
+	.dugme2:hover{
+		background: #6200ee;
+		background-image: url("images/levo.png");
+		background-size: 25px;
+		background-repeat: no-repeat;
+		background-position-x: center;
+		background-position-y: center;
+		outline: none;
+	}
+	.two, .tree, .four, .five, .six{
+		display: none;
+	}
+	.description{
+		width: 90%;
+		height: 100px;
+		display: block;
+		margin: auto;
+		margin-top: 0;
+		font-family: mainFont;
+	}
+	.description h1, h2{
+		margin: 0;
+	}
+	.description h2{
+		color: darkgrey;
+	}
+	.description p{
+		color: grey;
+		margin-top: 0;
+	}
+	.recent-container{
+		width: 100%;
+		height: 2300px;
+		font-family: mainFont;
+	}
+	.bottom-container{
+		width: 90%;
+		height: 30px;
+		display: block;
+		margin: auto;
+		margin-top: -30px;
+		position: relative;
+		background-color: #6200ee;
+		opacity: 0;
+		cursor: pointer;
+		transition: 1s;
+	}
+	.bottom-container:hover{
+		opacity: 0.9;
+	}
+	.bottom-container p{
+		margin: 0;
+		text-align: center;
+		color: white;
+		font-family: mainFont;
+		font-size: 20px;
+	}
+	.album-container{
+		top: 0;
+		margin: auto;
+		width: 90%;
+		min-height: 500px;
+	}
+	.album1{
+		width: 100%;
+		min-height: 400px;
+		background-image: url("images/album1.jpg");
+		overflow: hidden;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.album2{
+		width: 100%;
+		min-height: 400px;
+		margin-top: 20px;
+		background-image: url("images/album2.jpg");
+		overflow: hidden;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.album3{
+		width: 100%;
+		min-height: 400px;
+		margin-top: 20px;;
+		background-image: url("images/album3.jpg");
+		overflow: hidden;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.album-container2{
+		width: 90%;
+		height: 25%;
+		min-height: 150px;
+		margin: auto;
+	}
+	.album4{
+		width: 100%;
+		min-height: 400px;
+		margin-top: 20px;
+		background-image: url("images/album4.jpg");
+		overflow: hidden;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.album5{
+		width: 100%;
+		min-height: 400px;
+		margin-top: 20px;
+		background-image: url("images/album5.jpg");
+		overflow: hidden;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.album1:hover, .album2:hover, 
+	.album3:hover, .album4:hover,
+	.album5:hover{
+		cursor: pointer;
+		transition: .5s;
+		opacity: 0.5;
+	}
+	.modal-container{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		left: 0;
+		top: 0;
+		background-color: black;
+		opacity: 0.8;
+		display: none;
+	}
+	.modal-photo{
+		width: 80%;
+		height: auto;
+		position: fixed;
+		left: 10%;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1;
+		border-radius: 10px;
+		display: none;
+		animation-name: zoom;
+		animation-duration: 0.6s;
+	}
+	@keyframes zoom {
+		from {transform:scale(0)} 
+		to {transform:scale(1)}
+	}
+	.contact-container{
+		width: 100%;
+		height: 500px;
+	}
+	.map-container{
+		width: 90%;
+		height: 40%;
+		margin: auto;
+		margin-top: 100px;
+	}
+	.header-container{
+		width: 90%;
+		height: 100px;
+		font-family: mainFont;
+	}
+	.contact-photov{
+		float: left;
+		margin-left: 5%;
+	}
+	.header-container h1{
+		font-size: 40px;
+		margin-bottom: 0;
+		padding: 0;
+	}
+	.header-container h2{
+		margin-left: 0;
+		font-size: 40px;
+		color: #6200ee;
+		margin-top: 0;
+		padding: 0;
+	}
+	.descript{
+		max-width: 500px;
+		float: left;
+	}
+	.descript p{
+		margin-left: 5%;
+	}
+	.forma{
+		width: 90%;
+		margin: auto;
+		min-height: 200px;
+		position: relative;
+		top: 130px;
+	}
+	.unos1{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 35px;
+		outline: none;
+		border: none;
+		background-color: #F1F0F0;
+	}
+	.unos2{
+		position: absolute;
+		top: 50px;
+		left: 0;
+		width: 100%;
+		height: 35px;
+		outline: none;
+		border: none;
+		background-color: #F1F0F0;
+	}
+	.unos3{
+		position: absolute;
+		top: 100px;
+		left: 0;
+		width: 100%;
+		height: 35px;
+		outline: none;
+		border: none;
+		background-color: #F1F0F0;
+	}
+	.unos1,.unos2, .unos3{
+		color: gray;
+		font-family: mainFont;
+		font-size: auto;
+		text-align: center;
+	}
+	.unos4{
+		position: absolute;
+		top: 150px;
+		left: 0%;
+		width: 100%;
+		height: 250px;
+		outline: none;
+		border: none;
+		background-color: #F1F0F0;
+		text-align: top;
+		font-family: mainFont;
+		font-size: auto;
+		color: gray;
+	}
+	.posalji{
+		position: absolute;
+		top: 430px;
+		left: 0;
+		width: 100%;
+		height: 50px;
+		outline: none;
+		border: none;
+		background-color: #6200ee;
+		font-family: mainFont;
+		color: white;
+		font-size: 20px;
+		cursor: pointer;
+		transition: 0.5s;
+	}
+	.posalji:hover{
+		background-color: #F1F0F0;
+		color: black;
+	}
+	.fouter{
+		width: 100%;
+		min-height: 80px;
+		position: relative;
+		top: 450px;
+		background-color: black;
+		opacity: 0.85;
+	}
+	.fouter p{
+		color: white;
+		font-family: mainFont;
+		text-align: center;
+		display: block;
+		position: relative;
+		top: 40px;
+		transform: translateY(-50%);
+	}
+	.menu-container{
+		position: fixed;
+		width: 100%;
+		height: 60px;
+		background-color: white;
+		top: 0;
+		left: 0;
+		transition: 1s;
+	}
+	.menu-icon{
+		width: 30px;
+		height: 30px;
+		background-image: url("images/menu.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin: auto;
+		margin-top: 15px;
+		cursor: pointer;
+	}
+	.padding-menu{
+		position: fixed;
+		width: 90%;
+		height: 300px;
+		background: black;
+		opacity: 0.85;
+		top: 60px;
+		left: 5%;
+		display: none;
+		transition: 1s;
+	}
+	.padding-menu ul{
+		padding: 0;
+		color: white;
+		list-style-type: none;
+		font-family: mainFont;
+		text-align: center;
+		transition: 1s;
+	}
+	.padding-menu ul li{
+		font-size: 25px;
+		cursor: pointer;
+		padding: 10px;
+		margin-top: 10px;
+	}
+	.padding-menu ul li:hover{
+		opacity: 0.7;
+	}
+	.padding-menu ul li a{
+		font-size: 25px;
+		margin-top: 35px;
+	}
+	
+}

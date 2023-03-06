@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vesna Photo</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/phone-style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfe7T20mMePVyZvByTtuGs5WNjNHkARJs&callback=initMap&libraries=&v=weekly" defer></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body onload="OnLoad()">
+	<div class="main-container" id="main-container">
+		<div class="navbar-container">
+			<div class="logo">
+				<h1 class="text">PhotoV</h1>
+			</div>
+			<div class="navigation">
+				<ul id="selector">
+					<li id="home"><a>Home</a></li>
+					<li id="featured"><a>Featured</a></li>
+					<li id="recent"><a>Recent Work</a></li>
+					<li id="contact"><a>Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="background-name-container1" id="background-name-container1">
+			<h1 class="background-name" id="background-name">The Lake</h1><br>
+			<p class="background-description">
+				A lake is an area filled with water, localized in a basin, 
+				surrounded by land, apart from any river or other outlet 
+				that serves to feed or drain the lake.
+			</p><br>
+			<button class="more" id="more">Share More</button>
+		</div>
+		<div class="background-name-container2" id="background-name-container2">
+			<h1 class="background-name" id="background-name">Waterfall</h1><br>
+			<p class="background-description">
+				A waterfall is an area where water flows over a vertical 
+				drop or a series of steep drops in the course of a stream 
+				or river. 
+			</p><br>
+			<button class="more" id="more">Share More</button>
+		</div>
+		<div class="background-name-container2" id="background-name-container3">
+			<h1 class="background-name" id="background-name">Sunset</h1><br>
+			<p class="background-description">
+				Sunset, also known as sundown, is the daily disappearance 
+				of the Sun below the horizon due to Earth's rotation. As 
+				viewed from the Equator, the equinox Sun sets exactly due 
+				west in both Spring and Autumn. 
+			</p><br>
+			<button class="more" id="more">Share More</button>
+		</div>
+		<div class="background-name-container2" id="background-name-container4">
+			<h1 class="background-name" id="background-name">Highway</h1><br>
+			<p class="background-description">
+				A highway is any public or private road or other public 
+				way on land. It is used for major roads, but also includes 
+				other public roads and public tracks. 
+			</p><br>
+			<button class="more" id="more">Share More</button>
+		</div>
+		<div class="changer-container">
+			<button class="btn" id="first" onclick="Slider(this)"></button>
+			<button class="btn" id="second" onclick="Slider(this)"></button>
+			<button class="btn" id="third" onclick="Slider(this)"></button>
+			<button class="btn" id="forth" onclick="Slider(this)"></button>
+		</div>
+	</div>
+	<div class="featured-container" id="featured-container">
+		<div class="text-container">
+			<div class="header">
+				<h1>Featured</h1>
+				<h2>Photo</h2>
+			</div>
+			<div class="desc">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					 Enim dolorum aliquam a nostrum molestias!</p>
+			</div>
+			<div class="arrows1">
+				<button class="dugme1" onclick="Desno()"></button>
+			</div>
+			<div class="arrows2">
+				<button class="dugme2" onclick="Levo()"></button>
+			</div>
+		</div>
+		<br>
+		<div class="photo-scroll-container">
+			<div class="one" id="one">
+				<img src="images/prva.jpg" class="image" id="firstImage">
+					<div class="bottom-container">
+						<p>Continue Reading</p>
+					</div>
+				</img>
+				<div class="description">
+					<h1>Naslov</h1>
+					<h2>Podnaslov</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+						Dolorem velit mollitia quia nam, qui voluptates eveniet 
+						consequuntur modi molestias dignissimos blanditiis. 
+						Eligendi numquam recusandae quod voluptas earum dolor 
+						facilis repellat!</p>
+				</div>
+			</div>
+			<div class="two">
+				<img src="images/druga.jpg" class="image" id="secondImage">
+					<div class="bottom-container">
+						<p>Continue Reading</p>
+					</div>
+				</img>
+				<div class="description">
+					<h1>Naslov</h1>
+					<h2>Podnaslov</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+						Dolorem velit mollitia quia nam, qui voluptates eveniet 
+						consequuntur modi molestias dignissimos blanditiis. 
+						Eligendi numquam recusandae quod voluptas earum dolor 
+						facilis repellat!</p>
+				</div>
+			</div>
+			<div class="tree">
+				<img src="images/treca.jpg" class="image" id="thirdImage">
+					<div class="bottom-container">
+						<p>Continue Reading</p>
+					</div>
+				</img>
+				<div class="description">
+					<h1>Naslov</h1>
+					<h2>Podnaslov</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+						Dolorem velit mollitia quia nam, qui voluptates eveniet 
+						consequuntur modi molestias dignissimos blanditiis. 
+						Eligendi numquam recusandae quod voluptas earum dolor 
+						facilis repellat!</p>
+				</div>
+			</div>
+			<div class="four">
+				<img src="images/cetvrta.jpg" class="image" id="fourthImage"/>
+				<div class="description">
+					<h1>Naslov</h1>
+					<h2>Podnaslov</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+						Dolorem velit mollitia quia nam, qui voluptates eveniet 
+						consequuntur modi molestias dignissimos blanditiis. 
+						Eligendi numquam recusandae quod voluptas earum dolor 
+						facilis repellat!</p>
+				</div>
+			</div>
+			<div class="five">
+				<img src="images/peta.jpg" class="image" id="fifthImage"/>
+				<div class="description">
+					<h1>Naslov</h1>
+					<h2>Podnaslov</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+						Dolorem velit mollitia quia nam, qui voluptates eveniet 
+						consequuntur modi molestias dignissimos blanditiis. 
+						Eligendi numquam recusandae quod voluptas earum dolor 
+						facilis repellat!</p>
+				</div>
+			</div>
+			<div class="six">
+				<img src="images/sesta.jpg" class="image" id="sixthImage"/>
+				<div class="description">
+					<h1>Naslov</h1>
+					<h2>Podnaslov</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+						Dolorem velit mollitia quia nam, qui voluptates eveniet 
+						consequuntur modi molestias dignissimos blanditiis. 
+						Eligendi numquam recusandae quod voluptas earum dolor 
+						facilis repellat!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="recent-container">
+		<div class="text-container">
+			<div class="header">
+				<h1>Recent</h1>
+				<h2>Photo</h2>
+			</div>
+			<div class="desc">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					 Enim dolorum aliquam a nostrum molestias!</p>
+			</div>
+		</div>
+		<br>
+		<div class="album-container">
+			<div class="album1" id="album1" onclick="Prikazi('a')"></div>
+			<div class="album2" id="album2" onclick="Prikazi('b')"></div>
+			<div class="album3" id="album3" onclick="Prikazi('c')"></div>
+		</div>
+		<div class="album-container2">
+			<div class="album4" id="album4" onclick="Prikazi('d')"></div>
+			<div class="album5" id="album5" onclick="Prikazi('e')"></div>
+		</div>
+		<div class="modal-container" id="modal-container" onclick="Gasi()">
+		</div>
+		<img class="modal-photo" id="modal-photo">
+		<div class="next" id="next" onclick="Next()"></div>
+		<div class="left" id="previous" onclick="Previous()"></div>
+	</div>
+	<div class="contact-container">
+		<div class="map-container" id="map-container"></div>
+		<div class="contact-form-container">
+			<div class="header-container">
+				<div class="contact-photov">
+					<h1>Contact</h1>
+					<h2>PhotoV</h2>
+				</div>
+				<div class="descript">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						 Enim dolorum aliquam a nostrum molestias!</p>
+				</div>
+			</div>
+			<div class="forma">
+				<form>
+					<input type="text" class="unos1" placeholder="Your name...">
+					<input type="text" class="unos2" placeholder="Your email...">
+					<input type="text" class="unos3" placeholder="Subject">
+					<textarea class="unos4" placeholder="  Message..."></textarea>
+					<button class="posalji">Send Message Now</button>
+				</form>
+			</div>
+		</div>
+		<div class="fouter">
+			<p>Copyright © 2021 Flaminqo . Design: Djordje Ivanovic</p>
+		</div>
+	</div>
+	<div class="menu-container" id="menu-container">
+		<div class="menu-icon" id="menu-icon"></div>
+		<div class="padding-menu" id="paddiong-menu">
+			<ul>
+				<li id="home-click"><a>Home</a></li>
+				<li id="featured-click"><a>Featured</a></li>
+				<li id="recent-click"><a>Recent Work</a></li>
+				<li id="contact-click"><a>Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

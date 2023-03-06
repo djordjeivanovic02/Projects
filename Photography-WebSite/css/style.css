@@ -1,0 +1,624 @@
+body, html{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+@font-face{
+	font-family: mainFont;
+	src: url("fonts/ConcertOne-Regular.ttf");
+}
+
+@media only screen and (min-width: 1000px) {
+	.menu-container{
+		display: none;
+	}
+	.main-container{
+		overflow: hidden;
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transition: 2s;
+	}
+	.background-name-container1, .background-name-container2{
+		position: absolute;
+		width: 40%;
+		height: 300px;
+		right: 0;
+		top: 60%;
+		transform: translateY(-50%);
+		font-family: mainFont;
+		text-align: right;
+		display: none;
+	}
+	.background-name{
+		color: white;
+		float: right;
+		margin: 0;
+		margin-right: 50px;
+		font-size: 60px;
+	}
+	.background-description{
+		float: right;
+		color: white;
+		font-size: 20px;
+		text-align: right;
+		margin-right: 50px;
+	}
+	.more{
+		float: right;
+		margin-right: 50px;
+		width: 130px;
+		height: 40px;
+		outline: none;
+		border: none;
+		background: white;
+		color: #6200ee;
+		cursor: pointer;
+		transition: 0.6s;
+	}
+	.more:hover{
+		background-color: #6200ee;
+		color: white;
+	}
+	.changer-container{
+		width: 500px;
+		display: flex;
+		position: absolute;
+		left: 61%;
+		bottom: 20px;
+		transform: translateX(-50%);
+	}
+	.btn{
+		width: 80px;
+		height: 10px;
+		border-radius: 20px;
+		background-color: transparent;
+		border: 3px solid white;
+		margin: 10px;
+		cursor: pointer;
+		outline: none;
+		transition: 0.5s;
+		animation: slide 20s infinite;
+	}
+	.btn:focus{
+		background-color: white;
+		border: none;
+	}
+	.navbar-container{
+		position: fixed;
+		width:22%;
+		height: 100%;
+		background-color: black;
+		opacity: 0.85;
+	}
+	.logo{
+		width: 90%;
+		height: 100px;
+		border: 2px solid white;
+		margin: auto;
+		margin-top: 20px;
+		cursor: pointer;
+		color: white;
+	}
+	.logo:hover{
+		background-color: white;
+		color: black;
+	}
+	.text{
+		text-align: center;
+		font-size: 40px;
+		font-family: mainFont;
+		margin: 0;
+		padding-top: 20px;
+	}
+	.navigation{
+		position: absolute;
+		bottom: 300px;
+	}
+	ul{
+		list-style: none;
+	}
+	ul li{
+		font-size: 20px;
+		font-family: mainFont;
+		padding-top: 15px;
+		cursor: pointer;
+	}
+	ul li a{
+		text-decoration: none;
+		color: white;
+		transition: 1s;
+	}
+	ul li a::before {
+		content: "";
+		border: 0.5px solid white;
+		font-weight: bold;
+		display: inline-block; 
+		width: 10px;
+		height: 10px;
+		margin-right: 10px;
+		vertical-align: middle;
+		border-radius: 100%;
+	}
+	ul li a:hover::before{
+		background-color: white;
+	}
+	ul li::before{
+		content: "";
+		background-color: white;
+		font-weight: bold;
+		display: inline-block; 
+		width: 0px;
+		height: 2px;
+		margin-right: 10px;
+		vertical-align: middle;
+		transition: 1s;
+	}
+	.featured-container{
+		width: 100%;
+		height: 100%;
+		font-family: mainFont;
+	}
+	.selected a::before{
+		background-color: white;
+	}
+	.selected::before{
+		border: 1px solid white;
+		width: 20px;
+	}
+	.text-container{
+		width: 75%;
+		height: 200px;
+		margin-left: 25%;
+		float: left;
+	}
+	.text-container h1{
+		font-family: mainFont;
+		margin-left: 0;
+		margin-top: 80px;
+		font-size: 40px;
+		margin-bottom: 0;
+		padding: 0;
+	}
+	.text-container h2{
+		font-family: mainFont;
+		margin-left: 0;
+		font-size: 40px;
+		color: #6200ee;
+		margin-top: 0;
+		padding: 0;
+	}
+	.header{
+		display: block;
+		float: left;
+	}
+	.desc{
+		display: block;
+		float: left;
+		max-width: 300px;
+	}
+	.desc p{
+		margin-top: 100px;
+		margin-left: 80px;
+	}
+	.photo-scroll-container{
+		margin-left: 25%;
+		width: 70%;
+		height: 700px;
+		margin-top: 200px;
+	}
+	.one, .two, .tree{
+		width: 33.32%;
+		height: 100%;
+		float: left;
+	}
+	.one:hover, .two:hover, .tree:hover{
+		box-sizing: border-box;
+	}
+	.image{
+		width: 75%;
+		display: block;
+		margin: auto;
+		animation-name: zoom;
+		animation-duration: 0.6s;
+	}
+	.bottom-container{
+		width: 75%;
+		height: 30px;
+		display: block;
+		margin: auto;
+		margin-top: -30px;
+		position: relative;
+		background-color: #6200ee;
+		opacity: 0;
+		cursor: pointer;
+		transition: 1s;
+	}
+	.bottom-container:hover{
+		opacity: 0.9;
+	}
+	.bottom-container p{
+		margin: 0;
+		text-align: center;
+		color: white;
+		font-family: mainFont;
+		font-size: 20px;
+	}
+	.description{
+		width: 75%;
+		height: 100px;
+		display: block;
+		margin: auto;
+		font-family: mainFont;
+	}
+	.description h1, h2{
+		margin: 0;
+	}
+	.description h2{
+		color: darkgrey;
+	}
+	.description p{
+		color: grey;
+	}
+	.arrows1{
+		width: 40px;
+		height: 40px;
+		display: block;
+		float: left;
+		margin-top: 100px;
+		float: right;
+		margin-right: 13%;
+	}
+	.dugme1{
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		border: none;
+		background-image: url("images/desno.png");
+		background-size: 25px;
+		background-repeat: no-repeat;
+		background-position-x: center;
+		background-position-y: center;
+		outline: none;
+		transition: 1s;
+	}
+	.dugme1:hover{
+		background: #6200ee;
+		background-image: url("images/desno.png");
+		background-size: 25px;
+		background-repeat: no-repeat;
+		background-position-x: center;
+		background-position-y: center;
+		outline: none;
+	}
+	.arrows2{
+		width: 40px;
+		height: 40px;
+		display: block;
+		margin-top: 100px;
+		float: right;
+	}
+	.dugme2{
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		margin-left: -10px;
+		border: none;
+		background-image: url("images/levo.png");
+		background-size: 25px;
+		background-repeat: no-repeat;
+		background-position-x: center;
+		background-position-y: center;
+		outline: none;
+		transition: 1s;
+	}
+	.dugme2:hover{
+		background: #6200ee;
+		background-image: url("images/levo.png");
+		background-size: 25px;
+		background-repeat: no-repeat;
+		background-position-x: center;
+		background-position-y: center;
+		outline: none;
+	}
+	.four, .five, .six{
+		display: none;
+	}
+	.recent-container{
+		width: 100%;
+		height: 100%;
+		font-family: mainFont;
+		margin-top: 100px;
+	}
+	.album-container{
+		margin-left: 25%;
+		width: 70%;
+		height: 50%;
+		min-height: 300px;
+	}
+	.album1{
+		margin: 0;
+		background-image: url("images/album1.jpg");
+		overflow: hidden;
+		height: 100%;
+		width: 65%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		float: left;
+	}
+	.album2{
+		margin: 0;
+		float: left;
+		position: relative;
+		left: 2%;
+		background-image: url("images/album2.jpg");
+		overflow: hidden;
+		height: 49%;
+		width: 33%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.album3{
+		margin: 0;
+		position: relative;
+		left: 2%;
+		top: 2%;
+		background-image: url("images/album3.jpg");
+		overflow: hidden;
+		height: 49%;
+		width: 33%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.album-container2{
+		margin-left: 25%;
+		width: 70%;
+		height: 25%;
+		margin-top: 2%;
+		float: left;
+		min-height: 150px;
+	}
+	.album4{
+		margin: 0;
+		float: left;
+		position: relative;
+		left: 0;
+		background-image: url("images/album4.jpg");
+		overflow: hidden;
+		height: 100%;
+		width: 33%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.album5{
+		margin: 0;
+		float: left;
+		margin-left: 2%;
+		background-image: url("images/album5.jpg");
+		overflow: hidden;
+		height: 100%;
+		width: 65%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.album1:hover, .album2:hover, 
+	.album3:hover, .album4:hover,
+	.album5:hover{
+		cursor: pointer;
+		transition: .5s;
+		opacity: 0.5;
+	}
+	.modal-container{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		left: 0;
+		top: 0;
+		background-color: black;
+		opacity: 0.8;
+		display: none;
+	}
+	.modal-photo{
+		width: 70%;
+		height: 70%;
+		position: fixed;
+		left: 15%;
+		top: 15%;
+		z-index: 1;
+		border-radius: 10px;
+		display: none;
+		animation-name: zoom;
+		animation-duration: 0.6s;
+	}
+	.next{
+		width: 5%;
+		height: 10%;
+		position: fixed;
+		right: 15%;
+		top: 45%;
+		z-index: 2;
+		background-image: url("images/desno.png");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center;
+		cursor: pointer;
+		animation-name: zoom;
+		animation-duration: 0.6s;
+		display: none;
+	}
+	.left{
+		width: 5%;
+		height: 10%;
+		position: fixed;
+		left: 15%;
+		top: 45%;
+		z-index: 2;
+		background-image: url("images/levo.png");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center;
+		cursor: pointer;
+		animation-name: zoom;
+		animation-duration: 0.6s;
+		display: none;
+	}
+	.next:active{
+		width: 4%;
+		height: 9%;
+		right: 16%;
+		top: 46%;
+	}
+	.left:active{
+		width: 4%;
+		height: 9%;
+		left: 16%;
+		top: 46%;
+	}
+	@keyframes zoom {
+		from {transform:scale(0)} 
+		to {transform:scale(1)}
+	}
+	.contact-container{
+		width: 100%;
+		height: 100%;
+	}
+	.map-container{
+		margin-left: 22%;
+		width: 78%;
+		height: 40%;
+		position: relative;
+		top: 200px;
+	}
+	.header-container{
+		margin-left: 25%;
+		position: relative;
+		width: 75%;
+		height: 100px;
+		top: 200px;
+		font-family: mainFont;
+	}
+	.contact-photov{
+		float: left;
+	}
+	.header-container h1{
+		font-size: 40px;
+		margin-bottom: 0;
+		padding: 0;
+	}
+	.header-container h2{
+		margin-left: 0;
+		font-size: 40px;
+		color: #6200ee;
+		margin-top: 0;
+		padding: 0;
+	}
+	.descript{
+		max-width: 300px;
+		float: left;
+	}
+	.descript p{
+		margin-top: 40px;
+		margin-left: 80px;
+	}
+	.forma{
+		margin-left: 25%;
+		width: 72%;
+		min-height: 200px;
+		position: relative;
+		top: 300px;
+	}
+	.unos1{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 32%;
+		height: 35px;
+		outline: none;
+		border: none;
+		background-color: #F1F0F0;
+	}
+	.unos2{
+		position: absolute;
+		top: 0;
+		left: 34%;
+		width: 32%;
+		height: 35px;
+		outline: none;
+		border: none;
+		background-color: #F1F0F0;
+	}
+	.unos3{
+		position: absolute;
+		top: 0;
+		left: 68%;
+		width: 32%;
+		height: 35px;
+		outline: none;
+		border: none;
+		background-color: #F1F0F0;
+	}
+	.unos1,.unos2, .unos3{
+		color: gray;
+		font-family: mainFont;
+		font-size: 17px;
+		text-align: center;
+	}
+	.unos4{
+		position: absolute;
+		top: 50px;
+		left: 0%;
+		width: 100%;
+		height: 250px;
+		outline: none;
+		border: none;
+		background-color: #F1F0F0;
+		text-align: top;
+		font-family: mainFont;
+		font-size: 17px;
+		color: gray;
+	}
+	.posalji{
+		position: absolute;
+		top: 320px;
+		left: 0;
+		width: 100%;
+		height: 50px;
+		outline: none;
+		border: none;
+		background-color: #6200ee;
+		font-family: mainFont;
+		color: white;
+		font-size: 20px;
+		cursor: pointer;
+		transition: 0.5s;
+	}
+	.posalji:hover{
+		background-color: #F1F0F0;
+		color: black;
+	}
+	.fouter{
+		margin-left: 22%;
+		width: 78%;
+		min-height: 80px;
+		position: relative;
+		top: 540px;
+		background-color: black;
+		opacity: 0.85;
+	}
+	.fouter p{
+		color: white;
+		font-family: mainFont;
+		text-align: center;
+		display: block;
+		position: relative;
+		top: 40px;
+		transform: translateY(-50%);
+	}
+
+}
