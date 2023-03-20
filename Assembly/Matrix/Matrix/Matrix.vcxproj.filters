@@ -21,5 +21,8 @@
     <MASM Include="program.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="program2.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
