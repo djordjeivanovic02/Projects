@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e672818c-d8d8-459b-9075-bd8ab82b7e94}</ProjectGuid>
-    <RootNamespace>Ispiti</RootNamespace>
+    <ProjectGuid>{e3063b1c-950d-468c-a76b-06f376ed09e5}</ProjectGuid>
+    <RootNamespace>Ispit2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -129,7 +129,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <MASM Include="main.asm" />
-    <MASM Include="source.asm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

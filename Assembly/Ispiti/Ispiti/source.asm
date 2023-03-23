@@ -41,6 +41,7 @@ main proc
 
 		shr bx, 1
 		inc bx
+		adc ebx, 0
 		mov Y, bx
 
 		cmp X, 0
