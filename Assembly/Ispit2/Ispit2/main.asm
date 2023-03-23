@@ -6,6 +6,7 @@
 	Z dd 12
 .code
 main proc
+	mov si, 5
 	mov eax, X
 	mov ebx, Y
 	mov ecx, Z
