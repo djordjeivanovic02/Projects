@@ -5,8 +5,9 @@ int prebroji(short* niz, short dim, short n) {
 		mov edx, 1
 		mov cx, n
 		shl edx, cl
-		sub edx, 1				; maska
+		sub edx, 1; maska
 
+		; mov cx, dim
 		mov cx, dim
 		mov esi, 0
 		mov ebx, 0
