@@ -25,7 +25,7 @@ struct LinkedList{
         this->head = NULL;
         this->size = 0;
     }
-    bool add(int data){                         // Dodaje element na poslednje mesto
+    bool add(int data){
         try{
             struct Node* temp = new Node(data);
             if(this->head == NULL)
