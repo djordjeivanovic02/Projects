@@ -1,5 +1,7 @@
 #include <iostream>
 #include "structure.h"
+#include <list>
+#include <iterator>
 
 using namespace std;
 
@@ -16,6 +18,20 @@ int main(){
     list1->show();
 
     cout << list1->lastIndexOf(7) << endl;
+    list<int>::iterator it = list1->listIterator(5);
+
+    list1->offer(10);
+    list1->show();
+    cout << list1->peekLast() << endl;
+
+    cout << list1->pollLast() << endl;
+    list1->show();
+
+    list1->remove(2);
+    list1->show();
+    
+    list1->set(5, 55);
+    list1->show();
 
     // LinkedList* list2 = list1->clone();
     // list2->show();

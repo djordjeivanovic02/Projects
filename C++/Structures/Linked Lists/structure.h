@@ -1,4 +1,6 @@
 #include <iostream>
+#include <iterator>
+#include <list>
 
 using namespace std;
 
@@ -100,6 +102,7 @@ struct LinkedList{
             temp->prev = currentNode;
         }else
             cout << "Invalid index value!" << endl;
+        return true;
     }
     void show(){
         if(this->head != NULL){
@@ -209,5 +212,145 @@ struct LinkedList{
         }
         cout << "List is empty!" << endl;
         return 0;
+    }
+    list<int>::iterator listIterator(int index){
+        list<int> tempList;
+        struct Node* currentNode = head;
+        int count = 0;
+        while(currentNode != NULL){
+            if(count >= index){
+                tempList.push_back(currentNode->data);
+            }
+            currentNode = currentNode->next;
+            count++;
+        }
+        return next(tempList.begin(), size-index);
+    }
+    bool offer(int data){
+        add(data);
+        return true;
+    }
+    bool offerFirst(int data){
+        addFirst(data);
+        return true;
+    }
+    bool offerLast(int data){
+        add(data);
+        return true;
+    }
+    int peek(){
+        if(this->head != NULL)
+            return this->head->data;
+        return 0;
+    }
+    int peekFirst(){
+        return peek();
+    }
+    int peekLast(){
+        if(this->head != NULL){
+            struct Node* currentNode = head;
+            while(currentNode->next != NULL)
+                currentNode = currentNode->next;
+            return currentNode->data;
+        }
+        return 0;
+    }
+    int poll(){
+        if(this->head != NULL){
+            struct Node* temp = head;
+            head = head->next;
+            head->prev = NULL;
+            return temp->data;
+        }
+        return 0;
+    }
+    int pollFirst(){
+        return poll();
+    }
+    int pollLast(){
+        if(this->head != NULL){
+            struct Node* currentNode = head;
+            while(currentNode->next != NULL)
+                currentNode = currentNode->next;
+            struct Node* temp = currentNode;
+            currentNode->prev->next = NULL;
+            currentNode->prev = NULL;
+            return temp->data;
+        }
+        return 0;
+    }
+    int pop(){
+        return pollLast();
+    }
+    void push(int data){
+        add(data);
+    }
+    int remove(){
+        return pollFirst();
+    }
+    bool remove(int data){
+        if(this->head != NULL){
+            struct Node* currentNode = this->head;
+            while(currentNode->data != data && currentNode->next != NULL)
+                currentNode = currentNode->next;
+            currentNode->prev->next = currentNode->next;
+            currentNode->next = NULL;
+            currentNode->prev;
+            delete currentNode;
+            return true;
+        }
+        return false;
+    }
+    int removeFirst(){
+        return poll();
+    }
+    bool removeFirstOccurrence(int data){
+        return remove(data);
+    }
+    int removeLast(){
+        return pollLast();
+    }
+    bool removeLastOccurrence(int data){
+        pollLast();
+        return true;
+    }
+    int set(int index, int data){
+        if(index == 0){
+            struct Node* temp = this->head;
+            this->head->data = data;
+            return temp->data;
+        }else if(index == this->size-1){
+            struct Node* currentNode = this->head;
+            while(currentNode->next != NULL)
+                currentNode = currentNode->next;
+            struct Node* temp = currentNode;
+            currentNode->data = data;
+            return temp->data;
+        }else if(index > 0 && index < this->size-1){
+            struct Node* currentNode = this->head;
+            int count = 0;
+            while(currentNode != NULL && count != index){
+                currentNode = currentNode->next;
+                count++;
+            }
+            struct Node* temp = currentNode;
+            currentNode->data = data;
+            return temp->data;
+        }
+        cout << "List is empty!" << endl;
+        return 0;
+    }
+    int* toArray(){
+        int result[this->size];
+        int x = 0;
+        struct Node* currentNode = head;
+        while(currentNode->next != NULL){
+            result[x++] = currentNode->data;
+            currentNode = currentNode->next;
+        }
+        return result;
+    }
+    int size(){
+        return this->size;
     }
 };
