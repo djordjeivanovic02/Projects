@@ -8,7 +8,7 @@ struct Stack{
     int* arr;
 
     Stack(){
-        this->top = -1; //postavlja se na -1
+        this->top = -1; //postavlja se na 0
         this->arr = nullptr;
     }
     Stack(int max_size){
