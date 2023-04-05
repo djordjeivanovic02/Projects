@@ -350,7 +350,21 @@ struct LinkedList{
         }
         return result;
     }
-    int size(){
-        return this->size;
+    void removeDuplicates(){
+        if(this->head == NULL || this->head->next == NULL)
+            return;
+        Node* prevNode = this->head;
+        Node* currNode = this->head->next;
+        while(prevNode->next != NULL){
+            while(currNode != NULL){
+                if(prevNode->data == currNode->data){
+                    Node* tmp = currNode;
+                    currNode->prev->next = currNode->next;
+                    currNode->prev = tmp->prev;
+                }
+                currNode = currNode->next;
+            }
+            prevNode = prevNode->next;
+        }
     }
 };
