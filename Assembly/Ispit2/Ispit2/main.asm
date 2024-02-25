@@ -1,3 +1,4 @@
+#Promene
 .386
 .model flat, c
 .data
