@@ -4,6 +4,7 @@
 	X dd 0ffffffffh
 	N dw 0ffffh
 	p db 5
+
 	Sum dd 0
 .code
 main proc
