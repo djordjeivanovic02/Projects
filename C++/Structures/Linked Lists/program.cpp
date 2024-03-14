@@ -10,6 +10,7 @@ int main(){
     // LinkedList* list1 = new LinkedList();
     // list1->add(10);
     // list1->add(20);
+    
     // list1->add(1, 30);
     // list1->add(1, 40);
     // int niz[] = {1, 2, 3, 4, 5, 6, 7};
