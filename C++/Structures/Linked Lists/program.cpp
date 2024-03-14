@@ -6,6 +6,7 @@
 using namespace std;
 
 int main(){
+    // Ovo je sve test
     // LinkedList* list1 = new LinkedList();
     // list1->add(10);
     // list1->add(20);
